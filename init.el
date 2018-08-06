@@ -61,6 +61,7 @@ This function should only modify configuration layer settings."
      ;; https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Blang/go#description
      (go :variables
          go-use-gometalinter t
+         go-format-before-save t
          gofmt-command "goimports"
          go-tab-width 4
          go-use-test-args "-test.v -failfast -count=1 -race -timeout 10s"
