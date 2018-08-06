@@ -488,6 +488,8 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq sly-ignore-protocol-mismatches t)
   (setq inferior-lisp-program "sbcl")
+  (add-hook 'spacemacs-buffer-mode-hook (lambda ()
+                                          (set (make-local-variable 'mouse-1-click-follows-link) nil)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
