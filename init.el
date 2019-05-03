@@ -58,19 +58,18 @@ This function should only modify configuration layer settings."
      syntax-checking
      version-control
 
+     lsp
+
      ;; https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Blang/go#description
      (go :variables
-         go-use-gometalinter t
+         go-backend 'lsp
+         go-use-golangci-lint t
          go-format-before-save t
          gofmt-command "goimports"
          go-tab-width 4
          go-use-test-args "-test.v -failfast -count=1 -race -timeout 10s"
-         godoc-at-point-function 'godoc-gogetdoc
-         flycheck-gometalinter-vendor t
-         flycheck-gometalinter-fast t
-         flycheck-gometalinter-disable-linters '("goconst")
-         flycheck-gometalinter-deadline "10s")
-     common-lisp-sly
+         flycheck-golangci-lint-fast t
+         godoc-at-point-function 'godoc-gogetdoc)
      (rust :variables rust-format-on-save t)
      ocaml
      )
