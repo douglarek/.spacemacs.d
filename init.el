@@ -33,7 +33,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(yaml
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -58,7 +58,9 @@ This function should only modify configuration layer settings."
      syntax-checking
      version-control
 
-     lsp
+     (lsp :variables
+          lsp-ui-doc-enable nil
+          lsp-ui-sideline-enable nil)
 
      ;; https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Blang/go#description
      (go :variables
@@ -465,9 +467,9 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   (add-to-list 'default-frame-alist '(ns-appearance . dark))
   (setq configuration-layer-elpa-archives
-        '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
-          ("org-cn"   . "http://elpa.emacs-china.org/org/")
-          ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+    '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+      ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+      ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   (setq exec-path-from-shell-check-startup-files nil)
   )
 
@@ -504,7 +506,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (flycheck-ocaml youdao-dictionary yasnippet-snippets ws-butler writeroom-mode winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen utop use-package unfill tuareg toml-mode toc-org symon string-inflection spaceline-all-the-icons smex smeargle sly-repl-ansi-color sly-macrostep restart-emacs request rainbow-delimiters racer popwin persp-mode pcre2el password-generator paradox overseer org-plus-contrib org-bullets open-junk-file ocp-indent neotree nameless mwim multiple-cursors move-text mmm-mode merlin markdown-toc magit-svn magit-gitflow lorem-ipsum link-hint ivy-yasnippet ivy-xref ivy-purpose ivy-hydra indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make google-translate golden-ratio godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flycheck-rust flycheck-pos-tip flycheck-gometalinter flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish diff-hl define-word counsel-projectile company-statistics company-quickhelp company-go common-lisp-snippets column-enforce-mode clean-aindent-mode centered-cursor-mode cargo browse-at-remote auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ac-ispell))))
+    (yaml-mode flycheck-ocaml youdao-dictionary yasnippet-snippets ws-butler writeroom-mode winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen utop use-package unfill tuareg toml-mode toc-org symon string-inflection spaceline-all-the-icons smex smeargle sly-repl-ansi-color sly-macrostep restart-emacs request rainbow-delimiters racer popwin persp-mode pcre2el password-generator paradox overseer org-plus-contrib org-bullets open-junk-file ocp-indent neotree nameless mwim multiple-cursors move-text mmm-mode merlin markdown-toc magit-svn magit-gitflow lorem-ipsum link-hint ivy-yasnippet ivy-xref ivy-purpose ivy-hydra indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make google-translate golden-ratio godoctor go-tag go-rename go-impl go-guru go-gen-test go-fill-struct go-eldoc gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gh-md fuzzy font-lock+ flycheck-rust flycheck-pos-tip flycheck-gometalinter flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish diff-hl define-word counsel-projectile company-statistics company-quickhelp company-go common-lisp-snippets column-enforce-mode clean-aindent-mode centered-cursor-mode cargo browse-at-remote auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
