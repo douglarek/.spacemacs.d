@@ -59,18 +59,18 @@ This function should only modify configuration layer settings."
      version-control
 
      (lsp :variables
-          lsp-ui-doc-enable nil
+          ;; lsp-ui-doc-enable nil
           lsp-ui-sideline-enable nil)
 
      ;; https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Blang/go#description
      (go :variables
          go-backend 'lsp
-         go-use-golangci-lint t
+         ; go-use-golangci-lint t
          go-format-before-save t
          gofmt-command "goimports"
          go-tab-width 4
          go-use-test-args "-test.v -failfast -count=1 -race -timeout 10s"
-         flycheck-golangci-lint-fast t
+         ; flycheck-golangci-lint-fast t
          godoc-at-point-function 'godoc-gogetdoc)
      (rust :variables rust-format-on-save t)
      ocaml
